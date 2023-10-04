@@ -1,0 +1,24 @@
+{
+  "name": "better-colours",
+  "version": "1.0.0",
+  "description": "An open source library that helps you log stuff to your console",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo no test yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZenTheDarkGod/better-colours.git"
+  },
+  "keywords": [
+    "color",
+    "colour",
+    "console"
+  ],
+  "author": "zewenn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZenTheDarkGod/better-colours/issues"
+  },
+  "homepage": "https://github.com/ZenTheDarkGod/better-colours#readme"
+}
