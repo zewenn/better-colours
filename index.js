@@ -91,13 +91,13 @@ function setText(text, settings) {
 }
 
 const logTags = {
-    success: `${setText("✔", { colour: "green" })} ${setText(" SUCCESS ", { bgColour: "green" })}`,
-    fail: `${setText("✘", { colour: "red" })} ${setText(" FAIL ", { bgColour: "red" })}`,
-    building: `${setText("⚒", { color: "yellow" })} ${setText(" BUILDING ", { bgColour: "yellow" })}`,
-    compiling: `${setText("⚒", { color: "yellow" })} ${setText(" COMPILING ", { bgColour: "yellow" })}`,
-    executing: `${setText("⚡", { color: "yellow" })} ${setText(" EXECUTING ", { bgColour: "yellow" })}`,
+    success: `${setText("✔", { colour: "green" })} ${setText(" SUCCESS ", { bgColour: "green", colour: "black" })}`,
+    fail: `${setText("✘", { colour: "red" })} ${setText(" FAIL ", { bgColour: "red", colour: "white" })}`,
+    building: `${setText("⚒", { color: "yellow" })} ${setText(" BUILDING ", { bgColour: "yellow", colour: "white" })}`,
+    compiling: `${setText("⚒", { color: "yellow" })} ${setText(" COMPILING ", { bgColour: "yellow", colour: "white" })}`,
+    executing: `${setText("⚡", { color: "yellow" })} ${setText(" EXECUTING ", { bgColour: "yellow", colour: "white" })}`,
     building_executing: `${setText("⚡", { color: "yellow" })} ${setText(" BUILDING & EXECUTING ", { bgColor: "yellow", color: "white" })}`,
-    testing: `${setText("🧪", { colour: "blue" })} ${setText(" TESTING ", { bgColour: "blue" })}`
+    testing: `${setText("🧪", { colour: "blue" })} ${setText(" TESTING ", { bgColour: "blue", colour: "white" })}`
 }
 
 /**
@@ -106,8 +106,14 @@ const logTags = {
  * @param {string} text 
  * @param {"black" | "green" | "yellow" | "magenta" | "blue" | "cyan" | "white"} accentColour 
  */
-function createLogTag(symbol, text, accentColour) {
-    return `${setText(symbol, { colour: accentColour })} ${setText(" " + text + " ", { bgColour: accentColour })}`;
+function createLogTag(symbol, text, accentColour, textColour = null) {
+    let tag = `${setText(symbol, { colour: accentColour })} ${setText(" " + text + " ", { bgColour: accentColour })}`;
+    
+    if (textColour) {
+        tag = `${setText(symbol, { colour: accentColour })} ${setText(" " + text + " ", { bgColour: accentColour, colour: textColour })}`
+    };
+
+    return tag;
 }
 
 /**
